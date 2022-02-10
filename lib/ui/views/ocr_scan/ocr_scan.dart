@@ -16,7 +16,35 @@ class Ocr extends StatelessWidget {
           title: const Text('Ocr Scan'),
         ),
         body: Center(
-          child: Text(model.title),
+          child: _scanButton(context),
+        ),
+      ),
+    );
+  }
+
+  Widget _scanButton(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  offset: Offset(2, 4),
+                  blurRadius: 5,
+                  spreadRadius: 2)
+            ],
+            gradient: const LinearGradient(
+                begin: Alignment.centerLeft, end: Alignment.centerRight,
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: [Color(0xfffbb448), Color(0xfff7892b)])),
+        child: const Text(
+          'Scan',
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
     );
