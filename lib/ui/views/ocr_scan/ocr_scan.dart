@@ -30,8 +30,7 @@ class Ocr extends StatelessWidget {
   Widget _scanButton(BuildContext context, OcrViewModel model) {
     return InkWell(
       onTap: () {
-        model.scanOcr(context);
-     
+        model.imagePicker();
       },
       child: Container(
         height: 5,
