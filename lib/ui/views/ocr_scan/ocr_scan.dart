@@ -15,17 +15,26 @@ class Ocr extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Ocr Scan'),
         ),
-        body: Center(
-          child: _scanButton(context),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            height: 50,
+            child: _scanButton(context, model),
+          ),
         ),
       ),
     );
   }
 
-  Widget _scanButton(BuildContext context) {
+  Widget _scanButton(BuildContext context, OcrViewModel model) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        model.scanOcr(context);
+     
+      },
       child: Container(
+        height: 5,
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.symmetric(vertical: 15),
         alignment: Alignment.center,
@@ -34,7 +43,7 @@ class Ocr extends StatelessWidget {
             boxShadow: <BoxShadow>[
               BoxShadow(
                   color: Colors.grey.shade200,
-                  offset: Offset(2, 4),
+                  offset: const Offset(2, 4),
                   blurRadius: 5,
                   spreadRadius: 2)
             ],
@@ -50,3 +59,5 @@ class Ocr extends StatelessWidget {
     );
   }
 }
+
+// tap scan 

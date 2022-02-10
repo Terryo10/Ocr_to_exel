@@ -22,6 +22,6 @@ class StartUpViewModel extends BaseViewModel {
   }
 
   navigateToOcr(BuildContext context) {
-    context.navigateNamedTo('/Ocr');
+    context.navigateNamedTo('/excel-list');
   }
 }
